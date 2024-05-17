@@ -1,7 +1,7 @@
 
 
-<template>
-  <div>
-    <NuxtLayout></NuxtLayout>
-  </div>
+<template >
+  
+    <NuxtLayout data-theme="nestGit"  ></NuxtLayout>
+ 
 </template>
