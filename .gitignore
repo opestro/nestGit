@@ -22,3 +22,4 @@ logs
 .env
 .env.*
 !.env.example
+.github/workflows/deploy.yml
