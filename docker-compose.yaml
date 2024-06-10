@@ -9,9 +9,6 @@ services:
       - no-new-privileges:true
     networks:
       - proxy
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.nuxt-app.entrypoints=http"
