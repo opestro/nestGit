@@ -3,7 +3,7 @@ version: '3'
 services:
   nuxt-app:
     image: mahdiharzallah/nuxt-app-ts
-    container_name: nuxt-app-ts
+    container_name: nuxt-app
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
