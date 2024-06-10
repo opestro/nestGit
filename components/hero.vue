@@ -11,7 +11,7 @@
      
         <span class=" uppercase ">From Code to Cloud</span>
 
-        <span class="uppercase ">Simplifying Deployment</span>
+        <span class="uppercase ">Playing around</span>
         <a class="btn m-2 w-fit text-center text-4xl font-mono   rounded-3xl border-4 border-white  bg-success text-white "  href="https://www.linkedin.com/in/mehdi-harzallah-24a535225/"  > CONTACT US</a>
         <span class=" text-lg mb-5 font-extralight    italic">By Algerian Developers for Algerian Developers</span>      
     </div>
