@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  nuxt-app:
+    image: mahdiharzallah/nuxt-app-ts
+    container_name: nuxt-app-ts
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - proxy
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /home/serverconf/nuxt-app/data:/data
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nuxt-app.entrypoints=http"
+      # NOW YOU NEED TO SETUP A DOMAIN OR SUB DOAMIN DNS WITH YOUR IP AND WRITE IT BELOW : 
+      - "traefik.http.routers.nuxt-app.rule=Host(`tstnuxt.nestgit.com`)"
+      - "traefik.http.middlewares.nuxt-app-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.nuxt-app.middlewares=nuxt-app-https-redirect"
+      - "traefik.http.routers.nuxt-app-secure.entrypoints=https"
+      # NOW YOU NEED TO SETUP A DOMAIN OR SUB DOAMIN DNS WITH YOUR IP AND WRITE IT BELOW : 
+      - "traefik.http.routers.nuxt-app-secure.rule=Host(`tstnuxt.nestgit.com`)"
+      - "traefik.http.routers.nuxt-app-secure.tls=true"
+      - "traefik.http.routers.nuxt-app-secure.service=nuxt-app"
+      - "traefik.http.services.nuxt-app.loadbalancer.server.port=3000"
+      - "traefik.docker.network=proxy"
+
+networks:
+  proxy:
+    external: true
