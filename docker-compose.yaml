@@ -23,7 +23,7 @@ services:
       - "traefik.http.routers.nuxt-app-secure.rule=Host(`tstnuxt.nestgit.com`)"
       - "traefik.http.routers.nuxt-app-secure.tls=true"
       - "traefik.http.routers.nuxt-app-secure.service=nuxt-app"
-      - "traefik.http.services.nuxt-app.loadbalancer.server.port=3000"
+      #- "traefik.http.services.nuxt-app.loadbalancer.server.port=3000"
       - "traefik.docker.network=proxy"
 
 networks:
