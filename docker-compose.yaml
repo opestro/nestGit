@@ -10,7 +10,7 @@ services:
     networks:
       - proxy
     ports:
-      - "3000:3000"
+      - "3000:80"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.nuxt-app.entrypoints=http"
